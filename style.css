@@ -1,8 +1,20 @@
-h1, h3, label, input {
-    font-family: 'Russo One', sans-serif;
-    font-weight: 400;
+.jumbotron {
+    /* The image used */
+    background-image: url("cinema.jpeg");
+
+    /* Full height */
+    height: 100%;
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
-div {
-    align-content: center;
+h1.display-4, p, label {
+    font-family: 'Russo One', sans-serif;
+}
+
+.jumbotron, #movie-form {
+    text-align: center;
 }

@@ -20,18 +20,18 @@ $("#find-movie").on("click", function (event) {
 
 const displayInfo = (response) => {
     const movieInfo = response.results[0];
-    const movieDiv = $("<div class='movie'>");
-    const title = movieInfo.title
+    const titleP = "<p>Title: " + movieInfo.title + "</p>";
     const poster = "https://image.tmdb.org/t/p/w300" + movieInfo.poster_path;
-    const releaseDate = movieInfo.release_date
-    const plot = movieInfo.overview;
+    const posterImg = "<img src='" + poster + "'>";
+    const releaseDateP = "<p>Released: " + movieInfo.release_date + "</p>";;
+    const plotP = "<p>Plot: " + movieInfo.overview + "</p>";
 
-    movieDiv.append(
-        $("<img>").attr("src", poster),
-        $("<p>").text("Title: " + title),
-        $("<p>").text("Released: " + releaseDate),
-        $("<p>").text("Plot: " + plot)
+    const posterColumn = "<div class='col-sm-4'>" + posterImg + "</div>";
+    const infoColumn = "<div class='col-sm-4'>" + titleP + releaseDateP + plotP + "</div>";
+    console.log(infoColumn)
+
+    $("#movie-view").append(
+        posterColumn,
+        infoColumn
     )
-
-    $("#movie-view").html(movieDiv);
 }

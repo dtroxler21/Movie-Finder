@@ -6,41 +6,37 @@
     <title>Movie Finder</title>
     <link rel="stylesheet" type="text/css" href="style.css">
     <link href="https://fonts.googleapis.com/css?family=Russo+One" rel="stylesheet">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
+        crossorigin="anonymous">
 </head>
 
-<body>
+<body class="bg-danger">
 
     <div class="container-fluid">
-        <div class="row">
-            <div class="col-sm">
-                <h1>Movie Finder</h1>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-sm">
-                <h3>Powered by The Movie Database API</h3>
-            </div>
+        <div class="jumbotron">
+            <h1 class="display-4">Movie Finder</h1>
+            <p class="lead">Powered by The Movie Database API</p>
         </div>
 
         <div class="row">
             <div class="col-sm">
                 <form id="movie-form">
-                    <label for="movie-input">Search for a movie</label>
-                    <input type="text" id="movie-input">
+                    <label for="movie-input">Search for a movie:</label>
                     <br>
+                    <input type="text" id="movie-input">
                     <input id="find-movie" type="submit" value="Search">
                 </form>
+                <br>
             </div>
         </div>
-    
 
-        <div id="movie-view"></div>
+        <div class="row" id="movie-view">
+        </div>
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="app.js"></script>
-        
+
     </div>
 </body>
+
 </html>
