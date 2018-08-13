@@ -30,8 +30,10 @@ const displayInfo = (response) => {
     const infoColumn = "<div class='col-sm-4'>" + titleP + releaseDateP + plotP + "</div>";
     console.log(infoColumn)
 
+    $("#movie-view").text("");
+
     $("#movie-view").append(
         posterColumn,
         infoColumn
-    )
+    );
 }
