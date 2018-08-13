@@ -3,6 +3,7 @@ $("#find-movie").on("click", function (event) {
     event.preventDefault();
 
     const movie = $("#movie-input").val();
+    $("#movie-input").val("");
     const queryURL = "https://api.themoviedb.org/3/search/movie?query=" + movie + "&api_key=75f535f5e5c1d23e72fcdbe931044574";
 
     $.ajax({
