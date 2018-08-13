@@ -1,4 +1,4 @@
-$("#find-movie").on("click", function (event) {
+$("#find-movie").on("click", (event) => {
 
     event.preventDefault();
 
@@ -9,12 +9,13 @@ $("#find-movie").on("click", function (event) {
     $.ajax({
         url: queryURL,
         method: "GET"
-    }).then(function (response) {
+    }).then((response) => {
        if (response.results[0]) {
            displayInfo(response);
        } else {
-            $("#movie-view").text("No results found. Maybe you can make a new movie with that title! You can also search for these movies currently in theaters:");
-       }
+            $("#movie-view").html("<p>No results found. Maybe you can make a new movie with that title! You can also search for these movies currently in theaters:</p><br>");
+            nowPlaying();
+        }
     });
 
 });
@@ -27,8 +28,8 @@ const displayInfo = (response) => {
     const releaseDateP = "<p>Released: " + movieInfo.release_date + "</p>";;
     const plotP = "<p>Plot: " + movieInfo.overview + "</p>";
 
-    const posterColumn = "<div class='col-sm-4'>" + posterImg + "</div>";
-    const infoColumn = "<div class='col-sm-4'>" + titleP + releaseDateP + plotP + "</div>";
+    const posterColumn = "<div class='col-sm-12 col-md-4'>" + posterImg + "</div>";
+    const infoColumn = "<div class='col-sm-12 col-md-4'>" + titleP + releaseDateP + plotP + "</div>";
     console.log(infoColumn)
 
     $("#movie-view").text("");
@@ -37,4 +38,21 @@ const displayInfo = (response) => {
         posterColumn,
         infoColumn
     );
+}
+
+const nowPlaying = () => {
+    $.ajax({
+        url: "https://api.themoviedb.org/3/movie/now_playing?api_key=75f535f5e5c1d23e72fcdbe931044574&language=en-US&page=1",
+        method: "GET"
+    }).then((response) => {
+        const currentMovies = response.results;
+        for (var i=0; i < 3; i++) {
+            const posterImg = "<img src='https://image.tmdb.org/t/p/w300" + currentMovies[i].poster_path + "'>";
+            const movieColumn = "<div class='col-sm-12 col-md-4'>" + posterImg + "</div>"
+
+            $("#movie-view").append(
+                movieColumn
+            );
+        }
+    })
 }
