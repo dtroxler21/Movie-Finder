@@ -1,5 +1,5 @@
 .jumbotron {
-    background-image: url("../images/cinema.jpeg");
+    background-image: url("../images/movie.jpeg");
     height: 100%;
     background-position: center;
     background-repeat: no-repeat;
@@ -8,6 +8,11 @@
 
 h1.display-4, p, label {
     font-family: 'Russo One', sans-serif;
+    color: aqua;
+}
+
+hr {
+    background-color: aqua;
 }
 
 .jumbotron, #movie-form {

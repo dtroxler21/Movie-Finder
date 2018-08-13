@@ -10,24 +10,19 @@
         crossorigin="anonymous">
 </head>
 
-<body class="bg-danger">
+<body class="bg-dark">
 
     <div class="container-fluid">
         <div class="jumbotron">
             <h1 class="display-4">Movie Finder</h1>
             <p class="lead">Powered by The Movie Database API</p>
-        </div>
-
-        <div class="row">
-            <div class="col-sm">
-                <form id="movie-form">
-                    <label for="movie-input">Search for a movie:</label>
-                    <br>
-                    <input type="text" id="movie-input">
-                    <input id="find-movie" type="submit" value="Search">
-                </form>
+            <hr>
+            <form id="movie-form">
+                <label for="movie-input">Search for a movie:</label>
                 <br>
-            </div>
+                <input type="text" id="movie-input">
+                <input id="find-movie" type="submit" value="Search">
+            </form>
         </div>
 
         <div class="row justify-content-md-center" id="movie-view">
