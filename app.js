@@ -13,7 +13,7 @@ $("#find-movie").on("click", function (event) {
        if (response.results[0]) {
            displayInfo(response);
        } else {
-            $("#movie-view").text("No results found. Maybe you can make a new movie with that title! You can also check out these movies currently in theaters:");
+            $("#movie-view").text("No results found. Maybe you can make a new movie with that title! You can also search for these movies currently in theaters:");
        }
     });
 
