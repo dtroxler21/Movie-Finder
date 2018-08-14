@@ -5,9 +5,11 @@ Search and get information about a movie using The Movie Database! Check it out 
 
 ## Tools and Technologies Used
 -  HTML
+-  Bootstrap
 -  CSS
 -  JavaScript
 -  JQuery
 -  AJAX
 -  API
+-  Google Fonts
 
