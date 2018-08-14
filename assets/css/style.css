@@ -24,9 +24,13 @@ hr {
 }
 
 p.text-center {
-    font-size: 20px;
+    font-size: 30px;
 }
 
 img {
     padding-bottom: 50px;
+}
+
+div.col-md-4 {
+    margin-right: 50px;
 }
